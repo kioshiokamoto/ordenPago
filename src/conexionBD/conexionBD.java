@@ -17,19 +17,27 @@ import java.sql.DriverManager;
  */
 public class conexionBD {
     //private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    public Connection conexion(){
-        Connection cn= null;
+    public String usuario = "SOPORTE";
+    public String password= "SOPORTE";
+    public String url="jdbc:sqlserver://192.168.100.30;databasename=OPAGO";
+    public Connection cn= null;
+    public Statement st = null;
+    
+    public Statement conexion(){
+        
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            cn = DriverManager.getConnection(url,usuario,password);
+            st=cn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+//            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             //cn = DriverManager.getConnection("jdbc:sqlserver://192.168.100.30;databasename=OPAGO","SOPORTE","SOPORTE");
-            cn = DriverManager.getConnection("jdbc:sqlserver://192.168.1.6;databasename=OPAGO","SOPORTE","SOPORTE");
+//            cn = DriverManager.getConnection("jdbc:sqlserver://192.168.1.6;databasename=OPAGO","SOPORTE","SOPORTE");
             System.out.println("Conectado.");
         } 
-        catch (Exception e) 
+        catch (SQLException e) 
         {
           System.err.println("Error. " + e);
           
         }
-        return cn;
+        return st;
     }
 }
