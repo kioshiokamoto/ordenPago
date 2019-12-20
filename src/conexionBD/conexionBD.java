@@ -8,8 +8,12 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 /**
- *
- * @author KIOSHI
+ *  Se suele usar para bd
+ * Class.forName("DRIVER");
+ *  Connection conn = null;  //conexion
+    PreparedStatement prepSt = null;//Se pone conn.prepareStatement("LA CONSULTA O ACCION ?",VALORDE(?));
+    Statement st = null;// es un prepared pero no permite parametros
+    ResultSet rs = null;//Sirve para ver si se ejecuto un "select" generalmente
  */
 public class conexionBD {
     //private String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -17,12 +21,14 @@ public class conexionBD {
         Connection cn= null;
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            cn = DriverManager.getConnection("jdbc:sqlserver://192.168.100.30;databasename=OPAGO","SOPORTE","SOPORTE");
+            //cn = DriverManager.getConnection("jdbc:sqlserver://192.168.100.30;databasename=OPAGO","SOPORTE","SOPORTE");
+            cn = DriverManager.getConnection("jdbc:sqlserver://192.168.1.6;databasename=OPAGO","SOPORTE","SOPORTE");
             System.out.println("Conectado.");
         } 
         catch (Exception e) 
         {
-          System.out.println("Error.");
+          System.err.println("Error. " + e);
+          
         }
         return cn;
     }
