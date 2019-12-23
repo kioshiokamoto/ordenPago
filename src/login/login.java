@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashSet;
+import menu.main;
 
 /**
  *
@@ -73,14 +74,14 @@ public class login extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         salir.setBackground(null);
-        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir.png"))); // NOI18N
+        salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/exit.png"))); // NOI18N
         salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salirActionPerformed(evt);
             }
         });
         getContentPane().add(salir);
-        salir.setBounds(610, 0, 90, 80);
+        salir.setBounds(650, 0, 50, 50);
 
         usuario.setBackground(new java.awt.Color(209, 209, 209));
         usuario.setFont(new java.awt.Font("Raleway", 0, 18)); // NOI18N
@@ -126,7 +127,7 @@ public class login extends javax.swing.JFrame {
         getContentPane().add(ingresar);
         ingresar.setBounds(180, 560, 340, 60);
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/loginv1.png"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/loginv3.png"))); // NOI18N
         fondo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 fondoKeyPressed(evt);
@@ -141,10 +142,6 @@ public class login extends javax.swing.JFrame {
     private void usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usuarioActionPerformed
-
-    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
-        dispose();
-    }//GEN-LAST:event_salirActionPerformed
 
     private void usuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usuarioMouseClicked
         
@@ -192,10 +189,8 @@ public class login extends javax.swing.JFrame {
             if (encontrado == 1){
                 System.out.println("exitoso");
                 //Se habilitaria el menu principal
-//                Menu pl = new  Menu();
-//
-//                pl.setVisible(true);
-//
+                main m1 = new main();
+                m1.setVisible(true);
                 hide();
             }
             else{
@@ -209,6 +204,10 @@ public class login extends javax.swing.JFrame {
             System.err.println(ex);
         }
     }//GEN-LAST:event_ingresarActionPerformed
+
+    private void salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirActionPerformed
+        dispose();
+    }//GEN-LAST:event_salirActionPerformed
     
     /**
      * @param args the command line arguments
