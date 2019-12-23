@@ -42,7 +42,7 @@
           <Connection code="null" type="code"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/salir.png"/>
+          <Image iconType="3" name="/imagenes/exit.png"/>
         </Property>
       </Properties>
       <Events>
@@ -50,7 +50,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="610" y="0" width="90" height="80"/>
+          <AbsoluteConstraints x="650" y="0" width="50" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -117,7 +117,7 @@
     <Component class="javax.swing.JLabel" name="fondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/loginv1.png"/>
+          <Image iconType="3" name="/imagenes/loginv3.png"/>
         </Property>
       </Properties>
       <Events>
